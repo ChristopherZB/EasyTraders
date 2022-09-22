@@ -36,7 +36,7 @@ public abstract class VillagerEntityMixin extends MerchantEntity implements Inte
         super(entityType, world);
     }
 
-    @Inject(method = "interactMob(Lnet/minecraft/entity/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResult;", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "interactMob(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResult;", at = @At("HEAD"), cancellable = true)
     public void interactMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> ci) {
         ItemStack itemStack = player.getStackInHand(hand);
         if (itemStack.getItem() instanceof VillagerTrap && ((VillagerEntity)(Object)this).isAlive() && !((VillagerEntity)(Object)this).hasCustomer() && !((VillagerEntity)(Object)this).isSleeping()) {
