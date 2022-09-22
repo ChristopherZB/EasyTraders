@@ -1,0 +1,16 @@
+{
+  "overrides": [
+    {
+      "predicate": {
+        "closed": 0
+      },
+      "model": "easytraders:item/villager_trap_open"
+    },
+    {
+      "predicate": {
+        "closed": 1
+      },
+      "model": "easytraders:item/villager_trap_closed"
+    }
+  ]
+}

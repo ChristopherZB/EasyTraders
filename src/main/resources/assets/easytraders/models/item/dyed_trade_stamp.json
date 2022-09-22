@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "easytraders:item/trade_stamp_red",
+    "layer1": "easytraders:item/trade_stamp_handle"
+  }
+}

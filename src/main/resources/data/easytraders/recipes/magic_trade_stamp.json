@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EEE",
+    "ESE",
+    "ETE"
+  ],
+  "key": {
+    "T": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "E": {
+      "item": "minecraft:emerald"
+    },
+    "S": {
+      "item": "easytraders:trade_stamp"
+    }
+  },
+  "result": {
+    "item": "easytraders:magic_trade_stamp",
+    "count": 1
+  }
+}

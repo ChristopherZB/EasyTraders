@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "easytraders:red_wax"
+    },
+    {
+      "item": "easytraders:trade_stamp"
+    }
+  ],
+  "result": {
+    "item": "easytraders:dyed_trade_stamp",
+    "count": 1
+  }
+}

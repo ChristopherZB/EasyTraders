@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.macncheezy.easytraders.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ExampleMixin",
+    "VillagerEntityMixin",
+    "MerchantScreenMixin",
+    "MerchantScreenHandlerMixin",
+    "VillagerEntityInvoker"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

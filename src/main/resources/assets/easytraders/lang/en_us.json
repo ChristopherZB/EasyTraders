@@ -1,0 +1,19 @@
+{
+  "itemGroup.easytraders.main": "Easy Traders",
+  "item.easytraders.villager_trap": "Villager Trap",
+  "item.easytraders.villager_trap.tooltip": "%d",
+  "item.easytraders.trade_cycler": "Trade Cycler",
+  "item.easytraders.trade_stamp": "Trade Stamp",
+  "item.easytraders.dyed_trade_stamp": "Dyed Trade Stamp",
+  "item.easytraders.magic_trade_stamp": "Magic Trade Stamp",
+  "item.easytraders.red_wax": "Red Wax",
+
+
+  "container.easytraders.villager_screen.cycle": "NYI",
+  "item.easytraders.trade_cycler.cycle": "Cycled trades:",
+  "item.easytraders.trade_cycler.cycle_to": "-->Cycled to-->",
+  "item.easytraders.trade_cycler.cycle_2_special": "%d %d + %d %d => %d",
+  "item.easytraders.trade_cycler.cycle_2": "%d %d + %d %d => %d %d",
+  "item.easytraders.trade_cycler.cycle_1": "%d %d => %d %d",
+  "item.easytraders.trade_cycler.enchantment": "%d %d"
+}

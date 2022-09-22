@@ -1,0 +1,19 @@
+{
+  "type": "easytraders:stamp",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:emerald"
+    },
+    [
+      {"item": "easytraders:dyed_trade_stamp"},
+      {"item": "easytraders:magic_trade_stamp"}
+    ]
+  ],
+  "result": {
+    "item": "easytraders:trade_cycler",
+    "count": 8
+  }
+}
