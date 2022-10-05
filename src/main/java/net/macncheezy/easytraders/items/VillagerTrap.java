@@ -1,6 +1,7 @@
 package net.macncheezy.easytraders.items;
 
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.client.util.math.Vector3d;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -15,6 +16,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -31,13 +33,17 @@ public class VillagerTrap extends Item {
         NbtCompound nbt = itemStack.getNbt();
         World world = context.getWorld();
         Vec3d pos = context.getHitPos();
+        Direction dir = context.getSide();
 
         if (nbt != null && !nbt.isEmpty() && nbt.contains("IsFull")) {
             boolean IsFull = nbt.getBoolean("IsFull");
             if (IsFull) {
                 context.getPlayer().playSound(SoundEvents.BLOCK_BAMBOO_FALL, 1.0F, 1.0F);
                 VillagerEntity entity = EntityType.VILLAGER.create(world);
-                ((MobEntity) entity).refreshPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0.0F, 0.0F);
+                float planeOffset = 0.7f;
+                Vector3d offset = new Vector3d(dir.getOffsetX() * planeOffset, dir == Direction.DOWN ? -2 : 0, dir.getOffsetZ() * planeOffset);
+                ((MobEntity) entity).refreshPositionAndAngles(pos.getX() + offset.x, pos.getY() + offset.y, pos.getZ() + offset.z, 0.0F, 0.0F);
+
                 world.spawnEntity((Entity) entity);
 
                 NbtCompound villagerData = itemStack.getSubNbt("villager");
@@ -80,8 +86,10 @@ public class VillagerTrap extends Item {
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
         NbtCompound nbt = itemStack.getNbt();
         if (nbt != null && !nbt.isEmpty() && nbt.contains("IsFull") && nbt.getBoolean("IsFull")) {
+            tooltip.add(Text.translatable("item.easytraders.villager_trap.tooltip", "Right click to place down"));
             tooltip.add(Text.translatable("item.easytraders.villager_trap.tooltip", "Full of a villager").formatted(Formatting.GREEN));
         } else {
+            tooltip.add(Text.translatable("item.easytraders.villager_trap.tooltip", "Shift-right click to pick up"));
             tooltip.add(Text.translatable("item.easytraders.villager_trap.tooltip", "Empty").formatted(Formatting.RED));
         }
     }

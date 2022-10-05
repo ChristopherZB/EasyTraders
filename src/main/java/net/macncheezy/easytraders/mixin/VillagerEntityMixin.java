@@ -110,6 +110,6 @@ public abstract class VillagerEntityMixin extends MerchantEntity implements Inte
     }
 
     private boolean canCycle() {
-        return this.getExperience() == 0 && this.getVillagerData().getLevel() == 1;
+        return this.getExperience() == 0 && this.getVillagerData().getLevel() == 1 && (this.offers != null && !this.offers.isEmpty());
     }
 }
